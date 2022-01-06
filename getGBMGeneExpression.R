@@ -14,17 +14,18 @@ library(pd.hta.2.0)
 library(RUVnormalize)
 library(RUVnormalizeData)
 library(AnnotationDbi)
-install.packages(paste0(input_dir, "hta20hsensgcdf_24.0.0.tar.gz"), sep="", repos = NULL, type = "source")
+library(devtools)
 
 input_dir <- "/pfs/downloadGBMData/"
 cell_dir <- "/pfs/getGBMCellData/"
 out_dir <- "/pfs/out/" 
-functions <- "/pfs/getGBMCellData/functions.R"
 
 # input_dir <- "~/Documents/pfs/downloadGBMData/"
 # cell_dir <- "~/Documents/pfs/getGBMCellData/"
 # out_dir <- "~/Documents/pfs/getGBMGeneExpression/" 
-# functions <- "./functions.R"
+functions <- "https://github.com/BHKLAB-Pachyderm/getGBMCellData/raw/main/functions.R"
+
+install.packages(paste0(input_dir, "hta20hsensgcdf_24.0.0.tar.gz"), sep="", repos = NULL, type = "source")
 
 source(functions)
 load(paste0(input_dir, "Ensembl.v99.annotation.RData"))
